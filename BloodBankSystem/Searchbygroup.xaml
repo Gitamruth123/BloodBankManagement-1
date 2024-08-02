@@ -1,0 +1,16 @@
+﻿<Window x:Class="BloodBankSystem.Searchbygroup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodBankSystem"
+        mc:Ignorable="d"
+        Title="Searchbygroup" Height="558" Width="960" Background="#FFC86565" WindowStartupLocation="CenterScreen" WindowStyle="None" Margin="0,20,0,0">
+    <Grid>
+        <Label Content="SEARCH BY BLOOD GROUP" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" Height="33" Width="183" FontWeight="Bold"/>
+        <DataGrid x:Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,103,10,55"/>
+        <Label Content="BLOOD GROUP" HorizontalAlignment="Left" Margin="192,60,0,0" VerticalAlignment="Top" Height="24" Width="100"/>
+        <TextBox x:Name="txtBloodgroup" HorizontalAlignment="Left" Margin="314,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="txtBloodgroup_TextChanged"/>
+        <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Center" Margin="0,0,0,17" VerticalAlignment="Bottom" Height="29" Width="83" Background="#FF19B6B5" FontSize="16" Click="CloseButton_Click" />
+    </Grid>
+</Window>

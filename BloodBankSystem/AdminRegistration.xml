@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AdminRegistration>
+  <AdminRegistration>
+	<Admin>
+		<Username>Denny</Username>
+		<Password>pass</Password>
+		<Email>dennygeorgeko@gmail.com</Email>
+	</Admin>
+	<Admin>
+		<Username>Denn</Username>
+		<Password>pass</Password>
+		<Email>dennygeorge@gmail.com</Email>
+	</Admin>
+	<Admin>
+		<Username>Dennyf</Username>
+		<Password>pass</Password>
+		<Email>dennygeorgek@gmail.com</Email>
+	</Admin>
+	<Admin>
+		<Username>Rin</Username>
+		<Password>den</Password>
+		<Email>rinju@gmail.com</Email>
+	</Admin>
+	<Admin>
+		<Username>r</Username>
+		<Password>den</Password>
+		<Email></Email>
+	</Admin>
+	<Admin>
+		<Username>derah</Username>
+		<Password>pass</Password>
+		<Email>daaaaa@gmail.com</Email>
+	</Admin>
+	<Admin>
+		<Username>Derah</Username>
+		<Password>pass</Password>
+		<Email>derah@gmail.com</Email>
+	</Admin>
+</AdminRegistration>
+  <Admin>
+    <Username>asd</Username>
+    <Password>pass</Password>
+    <Email>asd@gmail.com</Email>
+  </Admin>
+</AdminRegistration>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BloodBank>
+  <Stock ID="1">
+    <BloodGroup>A+</BloodGroup>
+    <Quantity>257</Quantity>
+  </Stock>
+  <Stock ID="2">
+    <BloodGroup>B+</BloodGroup>
+    <Quantity>102</Quantity>
+  </Stock>
+  <Stock ID="3">
+    <BloodGroup>O+</BloodGroup>
+    <Quantity>107</Quantity>
+  </Stock>
+  <Stock ID="4">
+    <BloodGroup>AB+</BloodGroup>
+    <Quantity>96</Quantity>
+  </Stock>
+  <Stock ID="5">
+    <BloodGroup>A-</BloodGroup>
+    <Quantity>94</Quantity>
+  </Stock>
+  <Stock ID="6">
+    <BloodGroup>B-</BloodGroup>
+    <Quantity>100</Quantity>
+  </Stock>
+  <Stock ID="7">
+    <BloodGroup>O-</BloodGroup>
+    <Quantity>100</Quantity>
+  </Stock>
+  <Stock ID="8">
+    <BloodGroup>AB-</BloodGroup>
+    <Quantity>100</Quantity>
+  </Stock>
+</BloodBank>

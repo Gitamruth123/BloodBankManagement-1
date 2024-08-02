@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BloodBank>
+  <BloodBank>
+    <BloodBank>
+      <Donor ID="124">
+        <Fullname>Denny</Fullname>
+        <FatherName>dfgd</FatherName>
+        <DOB>8/7/2024</DOB>
+        <Mobile>dgd</Mobile>
+        <Gender>Male</Gender>
+        <Email>dg@</Email>
+        <BloodGroup>A+</BloodGroup>
+        <City>kte</City>
+        <Address>System.Windows.Controls.RichTextBox</Address>
+      </Donor>
+      <Donor ID="125">
+        <Fullname>Riya</Fullname>
+        <FatherName>Mathew</FatherName>
+        <DOB>2024-07-03</DOB>
+        <Mobile>999999999</Mobile>
+        <Gender>Female</Gender>
+        <Email>sample@gmail.com</Email>
+        <BloodGroup>O+</BloodGroup>
+        <City>TextBox</City>
+        <Address>System.Windows.Controls.RichTextBox</Address>
+      </Donor>
+      <Donor ID="128">
+        <Fullname>Hanna</Fullname>
+        <FatherName>m</FatherName>
+        <DOB>2024-07-04</DOB>
+        <Mobile>6666666666</Mobile>
+        <Gender>Female</Gender>
+        <Email>asd@gmail.com</Email>
+        <BloodGroup>B+</BloodGroup>
+        <City>on</City>
+        <Address>d</Address>
+      </Donor>
+    </BloodBank>
+  </BloodBank>
+  <Donor ID="130">
+    <Fullname>10</Fullname>
+    <FatherName>hfds</FatherName>
+    <DOB>01-08-2024</DOB>
+    <Mobile>88888888888</Mobile>
+    <Gender>Male</Gender>
+    <Email>asd@gmail.com</Email>
+    <BloodGroup>A-</BloodGroup>
+    <City>ajkdfhskj</City>
+    <Address>kh</Address>
+  </Donor>
+</BloodBank>

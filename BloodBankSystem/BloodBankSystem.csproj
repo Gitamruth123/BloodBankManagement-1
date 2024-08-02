@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Add new.png" />
+    <None Remove="Blood group.png" />
+    <None Remove="bloodbankb.jpg" />
+    <None Remove="dback.jpg" />
+    <None Remove="dbk.jpg" />
+    <None Remove="Dec.png" />
+    <None Remove="delete donor.png" />
+    <None Remove="Details.png" />
+    <None Remove="Donor.png" />
+    <None Remove="forgetpass.jpg" />
+    <None Remove="icons8-name-25.png" />
+    <None Remove="Inc.png" />
+    <None Remove="IQKrrYI3nqo0i9PNqO7W.jpg" />
+    <None Remove="login image.jpg" />
+    <None Remove="Logout icon.png" />
+    <None Remove="passwrod1.png" />
+    <None Remove="search user.png" />
+    <None Remove="stock.png" />
+    <None Remove="Update details.png" />
+    <None Remove="—Pngtree—user avatar login interface abstract_6796239.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Add new.png" />
+    <Resource Include="Blood group.png" />
+    <Resource Include="bloodbankb.jpg" />
+    <Resource Include="dback.jpg" />
+    <Resource Include="dbk.jpg" />
+    <Resource Include="Dec.png" />
+    <Resource Include="delete donor.png" />
+    <Resource Include="Details.png" />
+    <Resource Include="Donor.png" />
+    <Resource Include="forgetpass.jpg" />
+    <Resource Include="icons8-name-25.png" />
+    <Resource Include="Inc.png" />
+    <Resource Include="IQKrrYI3nqo0i9PNqO7W.jpg" />
+    <Resource Include="login image.jpg" />
+    <Resource Include="Logout icon.png" />
+    <Resource Include="passwrod1.png" />
+    <Resource Include="search user.png" />
+    <Resource Include="stock.png" />
+    <Resource Include="Update details.png" />
+    <Resource Include="—Pngtree—user avatar login interface abstract_6796239.png" />
+  </ItemGroup>
+
+</Project>

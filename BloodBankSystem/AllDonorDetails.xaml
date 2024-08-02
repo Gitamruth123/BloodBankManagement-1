@@ -1,0 +1,21 @@
+﻿<Window x:Class="BloodBankSystem.AllDonorDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BloodBankSystem"
+        mc:Ignorable="d"
+        Title="AllDonorDetails" Height="558" Width="960" Background="#FFC86565" WindowStartupLocation="CenterScreen" WindowStyle="None" Margin="0,20,0,0">
+    <Grid Loaded="Grid_Loaded">
+        <Label Content="ALL DONOR DETAILS" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" Height="36" Width="228" FontSize="20" FontWeight="Bold"/>
+        <DataGrid x:Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,66,10,0" SelectionChanged="DataGrid_SelectionChanged" Height="340">
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+        </DataGrid>
+        <Grid>
+            <Button x:Name="PrintButton" Content="Print" HorizontalAlignment="Left" Margin="176,0,0,27" VerticalAlignment="Bottom" Click="PrintButton_Click" Height="29" Width="83" Background="#FF19B6B5" FontSize="16"/>
+            <Button x:Name="CloseButton" Content="Close" HorizontalAlignment="Center" Margin="330,0,0,27" VerticalAlignment="Bottom" Height="29" Width="83" Background="#FF19B6B5" FontSize="16" Click="CloseButton_Click" />
+        </Grid>
+    </Grid>
+</Window>
