@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Xml.Linq;
@@ -10,20 +11,30 @@ namespace BloodBankSystem
     public partial class Searchbyname : Window
     {
         private XDocument xmldoc;
-        private string URL_XML_FILE = "../../../BloodBankData.xml";
+        private readonly string URL_XML_FILE = "../../../BloodBankData.xml";
         private List<Donor> donors;
 
         public Searchbyname()
         {
             InitializeComponent();
-            LoadData(); 
+            LoadDataAsync();
         }
 
-        private void LoadData()
+        private async void LoadDataAsync()
         {
-            xmldoc = XDocument.Load(URL_XML_FILE);
+            try
+            {
+                xmldoc = await Task.Run(() => XDocument.Load(URL_XML_FILE));
+                PopulateDonors();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}");
+            }
+        }
 
-            // Populate the list with donor data
+        private void PopulateDonors()
+        {
             donors = xmldoc.Descendants("Donor")
                             .Select(donorElement => new Donor
                             {
@@ -44,7 +55,13 @@ namespace BloodBankSystem
 
         private void txtsName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string searchText = txtsName.Text.ToLower();
+            string searchText = txtsName.Text.Trim().ToLower();
+
+            if (string.IsNullOrWhiteSpace(searchText))
+            {
+                dataGrid.ItemsSource = donors;
+                return;
+            }
 
             var filteredDonors = donors.Where(donor => donor.Name?.ToLower().Contains(searchText) == true).ToList();
 
@@ -61,12 +78,12 @@ namespace BloodBankSystem
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-
+            // Handle any initialization needed when the grid is loaded
         }
     }
 }
