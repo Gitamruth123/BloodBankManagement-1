@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <AdminRegistration>
   <AdminRegistration>
+  <AdminRegistration>
 	<Admin>
 		<Username>Denny</Username>
 		<Password>pass</Password>
@@ -41,5 +42,11 @@
     <Username>asd</Username>
     <Password>pass</Password>
     <Email>asd@gmail.com</Email>
+  </Admin>
+</AdminRegistration>
+  <Admin>
+    <Username>Ann</Username>
+    <Password>ann</Password>
+    <Email>ann@gmail.com</Email>
   </Admin>
 </AdminRegistration>
