@@ -28,22 +28,29 @@ namespace BloodBankSystem
 
             if (File.Exists(URL_XML_FILE))
             {
-                using (XmlReader reader = XmlReader.Create(URL_XML_FILE))
+                try
                 {
-                    while (reader.Read())
+                    using (XmlReader reader = XmlReader.Create(URL_XML_FILE))
                     {
-                        if (reader.NodeType == XmlNodeType.Element && reader.Name == "Donor")
+                        while (reader.Read())
                         {
-                            if (reader.HasAttributes)
+                            if (reader.NodeType == XmlNodeType.Element && reader.Name == "Donor")
                             {
-                                int id = int.Parse(reader.GetAttribute("ID"));
-                                if (id >= latestId)
+                                if (reader.HasAttributes)
                                 {
-                                    latestId = id;
+                                    int id = int.Parse(reader.GetAttribute("ID"));
+                                    if (id >= latestId)
+                                    {
+                                        latestId = id;
+                                    }
                                 }
                             }
                         }
                     }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error reading XML file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
 
@@ -67,57 +74,64 @@ namespace BloodBankSystem
 
         private void AddDonorToXml(string id, string fullname, string fatherName, string dob, string mobile, string gender, string email, string bloodGroup, string city, string address)
         {
-            string tempFileName = URL_XML_FILE + ".tmp";
-
-            using (XmlReader reader = XmlReader.Create(URL_XML_FILE))
-            using (XmlWriter writer = XmlWriter.Create(tempFileName, new XmlWriterSettings { Indent = true }))
+            try
             {
-                bool rootWritten = false;
-                while (reader.Read())
+                string tempFileName = URL_XML_FILE + ".tmp";
+
+                using (XmlReader reader = XmlReader.Create(URL_XML_FILE))
+                using (XmlWriter writer = XmlWriter.Create(tempFileName, new XmlWriterSettings { Indent = true }))
                 {
-                    if (reader.NodeType == XmlNodeType.Element && reader.Name == "BloodBank")
+                    bool rootWritten = false;
+                    while (reader.Read())
                     {
-                        if (!rootWritten)
+                        if (reader.NodeType == XmlNodeType.Element && reader.Name == "BloodBank")
                         {
-                            writer.WriteStartElement("BloodBank");
-                            rootWritten = true;
+                            if (!rootWritten)
+                            {
+                                writer.WriteStartElement("BloodBank");
+                                rootWritten = true;
+                            }
+                            writer.WriteNode(reader, true);
                         }
-                        writer.WriteNode(reader, true);
+                        else if (reader.NodeType == XmlNodeType.Element && reader.Name == "BloodBank")
+                        {
+                            writer.WriteNode(reader, true);
+                        }
                     }
-                    else if (reader.NodeType == XmlNodeType.Element && reader.Name == "BloodBank")
+
+                    if (!rootWritten)
                     {
-                        writer.WriteNode(reader, true);
+                        writer.WriteStartElement("BloodBank");
                     }
+
+                    writer.WriteStartElement("Donor");
+                    writer.WriteAttributeString("ID", id);
+                    writer.WriteElementString("Fullname", fullname);
+                    writer.WriteElementString("FatherName", fatherName);
+                    writer.WriteElementString("DOB", dob);
+                    writer.WriteElementString("Mobile", mobile);
+                    writer.WriteElementString("Gender", gender);
+                    writer.WriteElementString("Email", email);
+                    writer.WriteElementString("BloodGroup", bloodGroup);
+                    writer.WriteElementString("City", city);
+                    writer.WriteElementString("Address", address);
+                    writer.WriteEndElement();
+
+                    if (rootWritten)
+                    {
+                        writer.WriteEndElement();
+                    }
+
+                    writer.WriteEndDocument();
                 }
 
-                if (!rootWritten)
-                {
-                    writer.WriteStartElement("BloodBank");
-                }
-
-                writer.WriteStartElement("Donor");
-                writer.WriteAttributeString("ID", id);
-                writer.WriteElementString("Fullname", fullname);
-                writer.WriteElementString("FatherName", fatherName);
-                writer.WriteElementString("DOB", dob);
-                writer.WriteElementString("Mobile", mobile);
-                writer.WriteElementString("Gender", gender);
-                writer.WriteElementString("Email", email);
-                writer.WriteElementString("BloodGroup", bloodGroup);
-                writer.WriteElementString("City", city);
-                writer.WriteElementString("Address", address);
-                writer.WriteEndElement();
-
-                if (rootWritten)
-                {
-                    writer.WriteEndElement(); 
-                }
-
-                writer.WriteEndDocument();
+                File.Delete(URL_XML_FILE);
+                File.Move(tempFileName, URL_XML_FILE);
             }
-
-            File.Delete(URL_XML_FILE);
-            File.Move(tempFileName, URL_XML_FILE);
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error writing XML file: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private bool IsValidInput()
